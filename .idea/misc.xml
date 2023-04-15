@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/drawable/black_rook.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/drawable/drawable.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/drawable/old_button.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/drawable/selector.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/activity_chess_board.xml" value="0.2" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/activity_chess_layout.xml" value="0.1859375" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/activity_game.xml" value="0.1" />
         <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/black_rook.xml" value="0.2" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/chess_board.xml" value="0.2" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/chess_game_profile_layout.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/dead_piece_layout.xml" value="0.2" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/player_corner_layout.xml" value="0.1" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/player_game_info.xml" value="0.16324786324786325" />
+        <entry key="..\:/Users/supra/AndroidStudioProjects/Chess/app/src/main/res/layout/player_game_profile_layout.xml" value="0.1" />
       </map>
     </option>
   </component>
