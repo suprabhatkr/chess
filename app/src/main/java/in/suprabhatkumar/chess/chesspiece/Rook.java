@@ -2,10 +2,9 @@ package in.suprabhatkumar.chess.chesspiece;
 
 import java.util.ArrayList;
 
-import in.suprabhatkumar.chess.ChessSquare;
+import in.suprabhatkumar.chess.chessboard.ChessSquare;
 import in.suprabhatkumar.chess.Game;
 import in.suprabhatkumar.chess.R;
-import in.suprabhatkumar.chess.chesspiece.ChessPiece;
 
 public class Rook extends ChessPiece {
 

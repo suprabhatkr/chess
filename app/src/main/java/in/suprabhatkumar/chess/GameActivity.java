@@ -1,16 +1,19 @@
 package in.suprabhatkumar.chess;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import in.suprabhatkumar.chess.chessboard.ChessBoard;
+import in.suprabhatkumar.chess.player.PlayerCorner;
+
 
 public class GameActivity extends AppCompatActivity {
 
-    PlayerCorner playerCorner0, playerCorner1;
+    PlayerCorner[] playerCorners;
+    int gameType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,21 +24,26 @@ public class GameActivity extends AppCompatActivity {
         myImageView.setImageResource(R.drawable.game_background);
         myImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-        ChessBoard chessBoard = new ChessBoard();
+        this.gameType = getIntent().getExtras().getInt("gameType", 0);
+        ChessBoard chessBoard = new ChessBoard(gameType);
         chessBoard.setChessBoardLayout(findViewById(R.id.chess_board));
-        chessBoard.generateSquares();
-        Game game = new Game(chessBoard);
 
-        playerCorner0 = new PlayerCorner(game.getPlayer(0), this);
-        playerCorner1 = new PlayerCorner(game.getPlayer(1), this);
-        playerCorner1.getPlayerCornerLayout().setRotation(180);
-        ConstraintLayout c = findViewById(R.id.gameActivityLayout);
-        c.addView(playerCorner0.getPlayerCornerLayout());
-        c.addView(playerCorner1.getPlayerCornerLayout());
+        playerCorners = new PlayerCorner[2];
+        playerCorners[0] = new PlayerCorner(this);
+        playerCorners[1] = new PlayerCorner(this);
+        playerCorners[1].rotate();
 
-        //BoardHorizontalLayout boardHorizontalLayout = new BoardHorizontalLayout(this);
+        Game game = new Game(chessBoard, gameType, playerCorners);
+
+//        ConstraintLayout c = findViewById(R.id.gameActivityLayout);
+//        c.addView(playerCorner0.getPlayerCornerLayout());
+//        c.addView(playerCorner1.getPlayerCornerLayout());
+
     }
 
+    public int getGameType() {
+        return gameType;
+    }
 }
 
 

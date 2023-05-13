@@ -20,9 +20,18 @@
         android:layout_height="20dp"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="TextView" />
+    <Button
+        android:id="@+id/undoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="2dp"
+        app:backgroundTint="#AF0000"
+        android:shape="rectangle"
+        android:padding="2dp"
+        android:radius="40dp"
+        app:layout_constraintVertical_bias="0.193"
+        android:text="Undo"/>
 </LinearLayout>
