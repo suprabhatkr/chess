@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import in.suprabhatkumar.chess.ChessSquare;
+import in.suprabhatkumar.chess.chessboard.ChessSquare;
 import in.suprabhatkumar.chess.Game;
 import in.suprabhatkumar.chess.R;
 
