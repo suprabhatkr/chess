@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wooden_background"
+    tools:context=".CustomiseActivity">
+
+    <SeekBar
+        android:id="@+id/levelBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="249dp"
+        android:layout_marginEnd="190dp"
+        android:max="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/timer_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer_switch"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@id/time_increase_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelBar" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/time_increase_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_increase_switch"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/levelBar"
+        app:layout_constraintTop_toBottomOf="@+id/levelBar" />
+
+    <Spinner
+        android:id="@+id/gameTimeSpinner"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="1dp"
+        android:entries="@array/game_time_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_switch" />
+
+    <Spinner
+        android:id="@+id/timeIncreaseOptions"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="1dp"
+        android:entries="@array/time_increase_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTimeSpinner" />
+
+    <EditText
+        android:id="@+id/player1Input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="139dp"
+        android:ems="10"
+        android:inputType="text"
+        android:labelFor="@+id/player1Name"
+        android:hint="@string/player_1_name"
+        android:autofillHints="player1"
+        app:layout_constraintEnd_toStartOf="@+id/player2Input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/player2Input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginBottom="65dp"
+        android:ems="10"
+        android:inputType="text"
+        android:labelFor="@+id/player2Name"
+        android:hint="@string/player_2_name"
+        android:autofillHints="player2"
+        app:layout_constraintBottom_toTopOf="@+id/levelBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player1Input"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player1Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="334dp"
+        android:text="@string/player_1_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player2Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="127dp"
+        android:text="@string/player_2_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player1Label"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="159dp"
+        android:background="@drawable/curve_button"
+        android:text="@string/start_game"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:backgroundTint="#8B4513"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeIncreaseOptions" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

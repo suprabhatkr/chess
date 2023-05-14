@@ -24,7 +24,8 @@ public class GameActivity extends AppCompatActivity {
         myImageView.setImageResource(R.drawable.game_background);
         myImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-        this.gameType = getIntent().getExtras().getInt("gameType", 0);
+        Bundle gameData = getIntent().getExtras();
+        this.gameType = gameData.getInt("gameType", 0);
         ChessBoard chessBoard = new ChessBoard(gameType);
         chessBoard.setChessBoardLayout(findViewById(R.id.chess_board));
 
@@ -33,11 +34,7 @@ public class GameActivity extends AppCompatActivity {
         playerCorners[1] = new PlayerCorner(this);
         playerCorners[1].rotate();
 
-        Game game = new Game(chessBoard, gameType, playerCorners);
-
-//        ConstraintLayout c = findViewById(R.id.gameActivityLayout);
-//        c.addView(playerCorner0.getPlayerCornerLayout());
-//        c.addView(playerCorner1.getPlayerCornerLayout());
+        Game game = new Game(chessBoard, gameData, playerCorners);
 
     }
 

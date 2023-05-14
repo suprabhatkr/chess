@@ -1,5 +1,6 @@
 package in.suprabhatkumar.chess;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,23 +32,18 @@ public class Game {
     protected Stack<Move> moveStack;
     protected int level;
 
-    public Game(ChessBoard chessBoard, int gameType, PlayerCorner[] playerCorners) {
+    public Game(ChessBoard chessBoard, Bundle gameData, PlayerCorner[] playerCorners) {
         this.chessBoard = chessBoard;
         this.gameEnd = false;
-        this.gameType = gameType;
+        this.gameType = gameData.getInt("gameType", 0);
         for (int i = 0; i < 2; i++) {
             this.playerCorners[i] = playerCorners[i];
         }
-        setPlayers("Suprabhat", "Aparna");
+        setPlayers(gameData.getString("player1Name"), gameData.getString("player2Name"));
         initialize_pieces();
-        level = 2;
+        level = gameData.getInt("level", 1);
         moveStack = new Stack<>();
         getCurrentPlayer().startTimer();
-    }
-
-    public Game(ChessBoard chessBoard, int gameType, PlayerCorner[] playerCorners, int level) {
-        this(chessBoard, gameType, playerCorners);
-        this.level = level;
     }
 
     public Player getPlayer(int index) {
