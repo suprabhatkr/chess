@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Chess</string>
+    <string name="timer_switch">Timer Game</string>
+    <string name="time_increase_switch">Time Bonus</string>
+    <string-array name="game_time_options">
+        <item>3 mins</item>
+        <item>5 mins</item>
+        <item>10 mins</item>
+    </string-array>
+    <string-array name="time_increase_options">
+        <item>1 sec</item>
+        <item>3 secs</item>
+        <item>5 secs</item>
+    </string-array>
+    <string name="player_1_name">Player 1</string>
+    <string name="player_2_name">Player 2</string>
+    <string name="start_game">Start Game</string>
 </resources>
