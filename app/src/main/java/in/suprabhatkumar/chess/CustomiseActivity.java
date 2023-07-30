@@ -26,8 +26,8 @@ public class CustomiseActivity extends AppCompatActivity {
     protected TextView player1Label, player2Label;
     protected String player1Name, player2Name;
     protected Button startGameButton;
-    int gameType;
-    boolean timerEnabled, timeIncreaseEnabled;
+    protected int gameType;
+    protected boolean timerEnabled, timeIncreaseEnabled;
 
 
     @Override
@@ -53,7 +53,7 @@ public class CustomiseActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
-        levelSlider = findViewById(R.id.levelBar);
+        levelSlider = findViewById(R.id.level_bar);
         levelSlider.setVisibility(View.GONE);
 
         timerSwitch = findViewById(R.id.timer_switch);
@@ -101,6 +101,8 @@ public class CustomiseActivity extends AppCompatActivity {
                     enableGameTimeSpinner();
                     enableTimeIncreaseSwitch();
                 } else {
+                    disableTimeIncreaseSwitch();
+                    disableGameTimeSpinner();
                     timerEnabled = false;
                 }
             }
@@ -109,17 +111,26 @@ public class CustomiseActivity extends AppCompatActivity {
 
     private void enableTimeIncreaseSwitch() {
         timeIncreaseSwitch.setVisibility(View.VISIBLE);
-        timerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        timeIncreaseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked && timerEnabled) {
                     timeIncreaseEnabled = true;
                     enableTimeIncreaseSpinner();
                 } else {
+                    disableTimeIncreaseSpinner();
                     timeIncreaseEnabled = false;
                 }
             }
         });
+    }
+
+    private void disableTimeIncreaseSwitch() {
+        timeIncreaseEnabled = false;
+        disableTimeIncreaseSpinner();
+        timeIncreaseSwitch.setChecked(false);
+        timeIncreaseSwitch.setOnCheckedChangeListener(null);
+        timeIncreaseSwitch.setVisibility(View.GONE);
     }
 
     private void enableLevelSeeker() {
@@ -161,6 +172,11 @@ public class CustomiseActivity extends AppCompatActivity {
         });
     }
 
+    private void disableGameTimeSpinner() {
+        gameTimeSpinner.setOnItemSelectedListener(null);
+        gameTimeSpinner.setVisibility(View.GONE);
+    }
+
     private void enableTimeIncreaseSpinner() {
         timeIncreaseSpinner.setVisibility(View.VISIBLE);
         timeIncreaseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -175,6 +191,11 @@ public class CustomiseActivity extends AppCompatActivity {
                 increaseTime = 3;
             }
         });
+    }
+
+    private void disableTimeIncreaseSpinner() {
+        timeIncreaseSpinner.setOnItemSelectedListener(null);
+        timeIncreaseSpinner.setVisibility(View.GONE);
     }
 
     private void enableButtonClick() {
